@@ -2,11 +2,14 @@
   "name": "headspace-scraper",
   "version": "0.0.1",
   "description": "Scrape headspace for daily meditation.",
+  "type": "module",
   "main": "server.js",
-  "author": "Scotch",
+  "author": "me",
   "dependencies": {
+    "bluebird": "^3.5.4",
+    "cheerio": "latest",
     "express": "latest",
-    "request": "latest",
-    "cheerio": "latest"
+    "moment": "^2.24.0",
+    "request": "latest"
   }
 }
