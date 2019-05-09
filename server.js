@@ -15,10 +15,12 @@ var args = process.argv.slice(2);
 var username = args[0];
 var passwd = args[1];
 var today = moment(args[2]);
+var profilePath = process.env['USERPROFILE'];
 
 console.log(username);
 console.log(passwd);
 
+console.log(profilePath);
 
 async function main() {
 while(moment().isAfter(today)) {
@@ -89,7 +91,7 @@ while(moment().isAfter(today)) {
                                                     encoding: null
                                                 })
                                                 .then((html5) => {
-                                                    return fs.writeFileAsync(`C:\\Users\\dcan\\Documents\\My Music\\Headspace\\Daily\\${filename}-10min.mp3`, html5.body)
+                                                    return fs.writeFileAsync(`${profilePath}\\Documents\\My Music\\Headspace\\Daily\\${filename}-10min.mp3`, html5.body)
                                                         .then(x => {
 
                                                             console.log(`File Written: ${filename}`);
