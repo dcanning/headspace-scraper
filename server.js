@@ -7,6 +7,7 @@ request = Promise.promisifyAll(request.defaults({
     jar: jar
 }));
 var moment = require('moment');
+var ffmetadata = require("ffmetadata");
 
 var jwt;
 var args = process.argv.slice(2);
@@ -15,8 +16,8 @@ var passwd = args[1];
 var startDate = moment(args[3]).isValid(args[2]) ? moment(args[2]) : moment();
 var endDate = moment(args[3]).isValid(args[3]) ? moment(args[3]) : moment();
 var profilePath = process.env['USERPROFILE'];
-var savePath = `${profilePath}\\Music\\Headspace\\Daily\\`
-var ffmetadata = require("ffmetadata");
+//var savePath = `${profilePath}\\Music\\Headspace\\Daily\\`
+var savePath = `D:\\Music\\Headspace\\Daily\\`
 
 console.log(username);
 console.log(passwd);
