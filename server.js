@@ -80,19 +80,19 @@ async function main() {
                                         var suffix = `-10min.mp3`
                                         // console.log(tenMinuteMedia);
                                         // res.status(200).send(todaysInfo);
-                                        fs.access(`${savePath}${filename}${suffix}`, fs.constants.F_OK, (err) => {
+                                        fs.access(`${savePath}${filename}${suffix}`, fs.constants.F_OK, async (err) => {
                                             if (err) {
-                                                return request.getAsync(`https://api.prod.headspace.com/content/media-items/${tenMinuteId}/make-signed-url?mp3=true`, {
+                                                await request.getAsync(`https://api.prod.headspace.com/content/media-items/${tenMinuteId}/make-signed-url?mp3=true`, {
                                                         auth: {
                                                             bearer: jwt
                                                         }
                                                     })
-                                                    .then(async (html4) => {
+                                                    .then((html4) => {
                                                         // console.log(html4);
                                                         var url = JSON.parse(html4.toJSON().body).url;
                                                         // console.log(url)
                                                         // res.status(200).send(html4.body);
-                                                        await request.getAsync(url, {
+                                                        return request.getAsync(url, {
                                                                 auth: {
                                                                     bearer: jwt
                                                                 },
