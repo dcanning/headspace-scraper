@@ -9,6 +9,8 @@
     "bluebird": "^3.5.4",
     "cheerio": "latest",
     "express": "latest",
+    "ffmetadata": "^1.5.0",
+    "ffmpeg": "0.0.4",
     "moment": "^2.24.0",
     "request": "latest"
   }
